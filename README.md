@@ -1,5 +1,7 @@
 # What is the Project
-![Project Management Tool Homepage](https://i.ibb.co/wpKt0vZ/PPMT.png)
+<div align="center">
+  <img alt="Demo" src="./Images/homepage.png" />
+</div>
 This App is a ReactJS and Springboot App which allows the user to manage projects
 
 # Stack

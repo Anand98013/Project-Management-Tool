@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 import { getBacklog } from "../../actions/backlogActions";
 
 class ProjectBoard extends Component {
-  //constructor to handle errors
   constructor() {
     super();
     this.state = {
@@ -36,19 +35,43 @@ class ProjectBoard extends Component {
       if (project_tasks.length < 1) {
         if (errors.projectNotFound) {
           return (
-            <div className="alert alert-danger text-center" role="alert">
+            <div
+              className="alert alert-danger text-center"
+              role="alert"
+              style={{
+                marginTop: "20px",
+                borderRadius: "5px",
+                fontWeight: "bold",
+              }}
+            >
               {errors.projectNotFound}
             </div>
           );
-        }else if (errors.projectIdentifier) {
+        } else if (errors.projectIdentifier) {
           return (
-            <div className="alert alert-danger text-center" role="alert">
+            <div
+              className="alert alert-danger text-center"
+              role="alert"
+              style={{
+                marginTop: "20px",
+                borderRadius: "5px",
+                fontWeight: "bold",
+              }}
+            >
               {errors.projectIdentifier}
             </div>
           );
-          }  else {
+        } else {
           return (
-            <div className="alert alert-info text-center" role="alert">
+            <div
+              className="alert alert-info text-center"
+              role="alert"
+              style={{
+                marginTop: "20px",
+                borderRadius: "5px",
+                fontWeight: "bold",
+              }}
+            >
               No Project Tasks on this board
             </div>
           );
@@ -61,12 +84,12 @@ class ProjectBoard extends Component {
     BoardContent = boardAlgorithm(errors, project_tasks);
 
     return (
-      <div className="container">
-        <Link to={`/addProjectTask/${id}`} className="btn btn-primary mb-3">
-          <i className="fas fa-plus-circle"> Create Project Task</i>
+      <div className="container" style={{ padding: "20px", backgroundColor: "#f8f9fa", minHeight: "100vh" }}>
+        <Link to={`/addProjectTask/${id}`} className="btn btn-primary mb-3" style={{ fontSize: "1.2rem", borderRadius: "5px" }}>
+          <i className="fas fa-plus-circle" /> Create Project Task
         </Link>
         <br />
-        <hr />
+        <hr style={{ borderTop: "2px solid #007bff", marginBottom: "20px" }} />
         {BoardContent}
       </div>
     );
